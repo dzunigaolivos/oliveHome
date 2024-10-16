@@ -5,8 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { Leaf, Users, Cpu, Building } from "lucide-react"
-import { Check } from 'lucide-react'
+import { Users, Cpu, Building } from "lucide-react"
 import {  MapPinIcon, SendIcon } from "lucide-react"
 import {
   Carousel,

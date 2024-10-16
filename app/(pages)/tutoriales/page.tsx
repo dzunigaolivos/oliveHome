@@ -1,5 +1,5 @@
 "use client";
-import { SetStateAction, useState } from 'react'
+import { useState } from 'react'
 import { ChevronDown, ChevronUp, Play, Settings, Droplet, Sprout, Cloud } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
