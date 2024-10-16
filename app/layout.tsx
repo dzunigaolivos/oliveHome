@@ -1,16 +1,11 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { Raleway } from 'next/font/google'
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+const raleway = Raleway({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'], // Define los pesos que usarás
 });
 
 export const metadata: Metadata = {
@@ -26,9 +21,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${raleway.className} antialiased relative min-h-screen bg-backColor`}
       >
-        {children}
+        {/* Contenedor para el fondo anclado al fondo de la página */}
+        <div className="bg-water-texture absolute bottom-0 left-0 right-0 bg-cover bg-no-repeat z-[-1]" style={{ height: '100vh' }} />
+        
+        {/* Contenido principal */}
+        <div className="relative z-10">
+          {children}
+        </div>
       </body>
     </html>
   );
