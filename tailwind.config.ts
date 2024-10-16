@@ -35,6 +35,7 @@ const config: Config = {
 			'stars': '20px 20px',
 		  },
 		  
+		  
   		colors: {
 			backColor: '#f1f1f1',
 			ilback:'#fdb601',
