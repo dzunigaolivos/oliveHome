@@ -6,7 +6,15 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import Image from 'next/image'
 import logo from '../../public/images/logo.png';
-
+import iconfuente from '../../public/images/iconfuente.png';
+import iconclima from '../../public/images/iconclima.png';
+import iconsuelo from '../../public/images/iconsuelo.png';
+import iconlog from '../../public/images/iconlog.png';
+import iconconfig from '../../public/images/iconconfig.png';
+import iconplanta from '../../public/images/iconplanta.png';
+import dataanalitics from '../../public/images/dataanalitics.png';
+import iconriego from '../../public/images/iconriego.png';
+import vineyard from '../../public/images/vineyardback.jpg';
 
 interface TutorialData {
   id: number;
@@ -14,6 +22,8 @@ interface TutorialData {
   color: string;
   icon: React.ElementType;
   description: string;
+  fontcolor?: string;
+  iconRoute: string;
   videos: VideoData[];
 }
 
@@ -22,24 +32,29 @@ interface VideoData {
   title: string;
   duration: string;
   youtubeId: string;
+  fontcolor?: string;
 }
 
 const tutorialData: TutorialData[] = [
   {
     id: 1,
-    name: 'Configuración Inicial',
-    color: 'bg-blue-100',
+    name: 'General',
+    color: 'bg-primary',
     icon: Settings,
+    iconRoute: iconlog.src,
+    fontcolor: 'text-white',
     description: 'Aprende a configurar Olive+ para empezar a usarlo.',
     videos: [
-      { id: 1, title: 'Instalación de Olive+', duration: '5:30', youtubeId: 'VIDEO_ID_1' },
-      { id: 2, title: 'Configuración de la cuenta', duration: '3:45', youtubeId: 'VIDEO_ID_2' },
+      { id: 1, title: 'Instalación de Olive+', duration: '5:30', youtubeId: 'VIDEO_ID_1', fontcolor: 'text-white' },
+      { id: 2, title: 'Configuración de la cuenta', duration: '3:45', youtubeId: 'VIDEO_ID_2', fontcolor: 'text-white' },
     ],
   },
   {
     id: 2,
     name: 'Pozo',
-    color: 'bg-green-100',
+    color: 'bg-domain',
+    fontcolor: 'text-white',
+    iconRoute: iconfuente.src,
     icon: Droplet,
     description: 'Gestiona eficientemente los recursos hídricos de tu pozo.',
     videos: [
@@ -49,9 +64,24 @@ const tutorialData: TutorialData[] = [
   },
   {
     id: 3,
+    name: 'Riego',
+    color: 'bg-caudal',
+    fontcolor: 'text-white',
+    iconRoute: iconriego.src,
+    icon: Cloud,
+    description: 'Utiliza datos climáticos para tomar decisiones informadas.',
+    videos: [
+      { id: 7, title: 'Interpretación de pronósticos', duration: '6:45', youtubeId: 'VIDEO_ID_7' },
+      { id: 8, title: 'Ajuste de riego según condiciones climáticas', duration: '5:15', youtubeId: 'VIDEO_ID_8' },
+    ],
+  },
+  {
+    id: 4,
     name: 'Suelo',
-    color: 'bg-yellow-100',
+    color: 'bg-mesure',
+    fontcolor: 'text-white',
     icon: Sprout,
+    iconRoute: iconsuelo.src,
     description: 'Optimiza el manejo del suelo para un mejor rendimiento de cultivos.',
     videos: [
       { id: 5, title: 'Análisis de humedad del suelo', duration: '6:10', youtubeId: 'VIDEO_ID_5' },
@@ -59,9 +89,50 @@ const tutorialData: TutorialData[] = [
     ],
   },
   {
-    id: 4,
+    id: 5,
     name: 'Clima',
-    color: 'bg-red-100',
+    color: 'bg-olive2',
+    fontcolor: 'text-white',
+    iconRoute: iconclima.src,
+    icon: Cloud,
+    description: 'Utiliza datos climáticos para tomar decisiones informadas.',
+    videos: [
+      { id: 7, title: 'Interpretación de pronósticos', duration: '6:45', youtubeId: 'VIDEO_ID_7' },
+      { id: 8, title: 'Ajuste de riego según condiciones climáticas', duration: '5:15', youtubeId: 'VIDEO_ID_8' },
+    ],
+  },
+  {
+    id: 6,
+    name: 'Planta',
+    color: 'bg-clear',
+    fontcolor: 'text-white',
+    iconRoute: iconplanta.src,
+    icon: Cloud,
+    description: 'Utiliza datos climáticos para tomar decisiones informadas.',
+    videos: [
+      { id: 7, title: 'Interpretación de pronósticos', duration: '6:45', youtubeId: 'VIDEO_ID_7' },
+      { id: 8, title: 'Ajuste de riego según condiciones climáticas', duration: '5:15', youtubeId: 'VIDEO_ID_8' },
+    ],
+  },
+  {
+    id: 7,
+    name: 'Análisis de datos',
+    color: 'bg-device',
+    fontcolor: 'text-white',
+    iconRoute: dataanalitics.src,
+    icon: Cloud,
+    description: 'Utiliza datos climáticos para tomar decisiones informadas.',
+    videos: [
+      { id: 7, title: 'Interpretación de pronósticos', duration: '6:45', youtubeId: 'VIDEO_ID_7' },
+      { id: 8, title: 'Ajuste de riego según condiciones climáticas', duration: '5:15', youtubeId: 'VIDEO_ID_8' },
+    ],
+  },
+  {
+    id: 8,
+    name: 'Configuración',
+    color: 'bg-primary',
+    fontcolor: 'text-white',
+    iconRoute: iconconfig.src,
     icon: Cloud,
     description: 'Utiliza datos climáticos para tomar decisiones informadas.',
     videos: [
@@ -90,14 +161,14 @@ export default function TutorialPage() {
         <header className="relative z-20">
           <div className="container mx-auto px-4 py-4 flex justify-between items-center">
             <div className="flex items-center">
-            <Image
-              src={logo.src}
-              alt="Olive+"
-              width={130}
-              height={80} />
+              <Image
+                src={logo.src}
+                alt="Olive+"
+                width={130}
+                height={80} />
             </div>
             <nav className="hidden md:flex space-x-4">
-            <a href="./"><Button className='text-white' variant="ghost">Inicio</Button></a>
+              <a href="./"><Button className='text-white' variant="ghost">Inicio</Button></a>
               <a href="/tutoriales"><Button className='text-white' variant="ghost">Tutoriales</Button></a>
               <Button className='text-white bg-clear border-clear' variant="outline">Ingresar a Olive+</Button>
               <Button variant="outline" className="md:hidden">
@@ -115,20 +186,31 @@ export default function TutorialPage() {
       </div>
 
       <main className="container mx-auto px-4 py-8 relative z-30 -mt-64">
-        <Card className="mb-8 w-full bg-white shadow-lg">
-          <CardContent className="p-6">
-            <h2 className="text-2xl font-semibold mb-4">Bienvenido a los Tutoriales de Olive+</h2>
-            <p className="text-gray-600">Explora nuestros módulos de aprendizaje para sacar el máximo provecho de Olive+ en la gestión de tu sistema de riego.</p>
-          </CardContent>
-        </Card>
+      <Card 
+  className="relative mb-8 w-full h-[500px] bg-white shadow-lg flex flex-col justify-end items-start overflow-hidden" 
+  style={{ backgroundImage: `url('${vineyard.src}')` }}
+>
+  {/* Superposición con degradado */}
+  <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-1"></div>
+
+  {/* Contenido de la tarjeta */}
+  <CardContent className="relative z-10 p-6">
+    <h2 className="text-5xl font-semibold mb-4 text-white">Bienvenido a los Tutoriales de Olive+</h2>
+    <p className="text-white">Explora nuestros módulos de aprendizaje para sacar el máximo provecho de Olive+ en la gestión de tu sistema de riego.</p>
+  </CardContent>
+</Card>
 
         <ScrollArea className="h-[calc(100vh-300px)]">
           {tutorialData.map((module: TutorialData) => (
-            <Card key={module.id} className={`mb-4 ${module.color} w-full shadow-md`}>
+            <Card key={module.id} className={`mb-4 ${module.color} ${module.fontcolor} w-full shadow-md`}>
               <CardHeader className="cursor-pointer" onClick={() => toggleModule(module.id)}>
                 <CardTitle className="flex justify-between items-center">
                   <div className="flex items-center">
-                    <module.icon className="h-6 w-6 mr-2" />
+                    <img
+                      src={module.iconRoute}
+                      alt="icon"
+                      className="h-16 w-16 mr-2"
+                      width={200} height={200} />
                     <span className="text-xl">{module.name}</span>
                   </div>
                   <Button
@@ -145,7 +227,7 @@ export default function TutorialPage() {
               </CardHeader>
               {expandedModule === module.id && (
                 <CardContent>
-                  <p className="text-sm text-gray-600 mb-4">{module.description}</p>
+                  <p className={`text-sm ${module.fontcolor} mb-4`}>{module.description}</p>
                   {module.videos.map((video) => (
                     <div key={video.id} className="mb-4">
                       <Button
@@ -155,7 +237,7 @@ export default function TutorialPage() {
                       >
                         <Play className="h-4 w-4 mr-2" />
                         <span className="flex-grow text-left">{video.title}</span>
-                        <span className="text-sm text-gray-500">{video.duration}</span>
+                        <span className={`text-sm ${video.fontcolor}`}>{video.duration}</span>
                       </Button>
                       {selectedVideo && selectedVideo.id === video.id && (
                         <div className="mt-2">

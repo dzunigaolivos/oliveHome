@@ -6,7 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Users, Cpu, Building } from "lucide-react"
-import {  MapPinIcon, SendIcon } from "lucide-react"
+import { MapPinIcon, SendIcon } from "lucide-react"
 import {
   Carousel,
   CarouselContent,
@@ -29,6 +29,7 @@ import pozo from './public/images/iconfuente.png';
 import planta from './public/images/iconplanta.png';
 import analisis from './public/images/dataanalitics.png';
 import olillustration from './public/images/olillustration.png';
+import vineyardback from './public/images/vineyardback.jpg';
 
 
 export default function Home() {
@@ -125,50 +126,54 @@ export default function Home() {
       )}
 
       {/* Hero con video y logo */}
-    <section className="relative pt-16 h-[700px] overflow-hidden">
-      {/* Contenedor del video */}
-      <div className="absolute inset-0 w-full md:w-1/2 md:left-1/2 h-full">
-        <div className="w-full h-full overflow-hidden">
-          <iframe
-            className="absolute top-0 left-0 w-full h-full"
-            src="https://www.youtube.com/embed/BgqxLwEI39E?si=mriAys8yUvuIdt9K&autoplay=1&loop=1&mute=1&controls=0"
-            allow="autoplay; encrypted-media"
-            allowFullScreen
-            title="Video de fondo de Olive+"
-            style={{
-              position: 'absolute',
-              top: '50%',
-              left: '50%',
-              width: '100%',
-              height: '100%',
-              transform: 'translate(-50%, -50%) scale(2)',
-              transformOrigin: 'center center'
-            }}
-          />
-        </div>
-      </div>
-      
-      {/* Overlay para cubrir todo y prevenir clics en el video */}
-      <div className="absolute inset-0 bg-black bg-opacity-20 md:bg-opacity-0"></div>
-      
-      {/* Fondo sólido para el lado izquierdo en dispositivos medianos y grandes */}
-      <div className="absolute inset-0 bg-slate-100 md:w-1/2 hidden md:block"></div>
-      
-      {/* Contenido (texto) */}
-      <div className="relative z-10 flex items-center h-full">
-        <div className="  px-4 sm:px-8 md:px-12 lg:px-16 w-full md:w-full">
-          <h1 className="text-blk text-shadow-outline text-3xl sm:text-4xl md:text-5xl lg:text-8xl  font-bold">la manera más fácil de </h1>
-          <h1 className="text-blk text-shadow-outline text-3xl sm:text-4xl md:text-5xl lg:text-8xl font-bold">gestionar tu riego,</h1>
-          <h1 className="text-blk text-shadow-outline text-3xl sm:text-4xl md:text-5xl lg:text-8xl font-bold">ahora a tu alcance</h1>
-          <Image
-            className='mt-4'
+      <section className="relative pt-16 h-[700px] overflow-hidden">
+        {/* Contenedor del video */}
+        <div className="absolute inset-0 w-full md:w-1/2 md:left-1/2 h-full">
+  <div className="w-full h-full overflow-hidden relative">
+    {/* Contenedor superpuesto para el efecto de glassmorphism */}
+    <div className="absolute inset-0 bg-white bg-opacity-10 backdrop-blur-0 border border-white/20 rounded-lg z-10"></div>
+
+    {/* Video de YouTube */}
+    <iframe
+      className="absolute top-0 left-0 w-full h-full"
+      src="https://www.youtube.com/embed/BgqxLwEI39E?si=mriAys8yUvuIdt9K&autoplay=1&loop=1&mute=1&controls=0"
+      allow="autoplay; encrypted-media"
+      allowFullScreen
+      title="Video de fondo de Olive+"
+      style={{
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        width: '100%',
+        height: '100%',
+        transform: 'translate(-50%, -50%) scale(2)',
+        transformOrigin: 'center center',
+      }}
+    />
+  </div>
+</div>
+
+        {/* Overlay para cubrir todo y prevenir clics en el video */}
+        <div className="absolute inset-0 bg-black bg-opacity-20 md:bg-opacity-0"></div>
+
+        {/* Fondo sólido para el lado izquierdo en dispositivos medianos y grandes */}
+        <div className="absolute inset-0 bg-slate-100 md:w-1/2 hidden md:block"></div>
+
+        {/* Contenido (texto) */}
+        <div className="relative z-10 flex items-center h-full">
+          <div className="  px-4 sm:px-8 md:px-12 lg:px-16 w-full md:w-full">
+            <h1 className="text-blk text-shadow-outline text-3xl sm:text-4xl md:text-5xl lg:text-8xl  font-bold">la manera más fácil de </h1>
+            <h1 className="text-blk text-shadow-outline text-3xl sm:text-4xl md:text-5xl lg:text-8xl font-bold">gestionar tu riego,</h1>
+            <h1 className="text-blk text-shadow-outline text-3xl sm:text-4xl md:text-5xl lg:text-8xl font-bold">ahora a tu alcance</h1>
+            <Image
+              className='mt-4'
               src={logoblack.src}
               alt="Olive+"
               width={450}
               height={100} />
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
 
       {/*<section className="relative pt-16 h-[600px] overflow-hidden">
@@ -230,20 +235,20 @@ export default function Home() {
 
       <section className='my-4'>
         <div className='flex bg-center self-center items-center justify-center bg-ilback'>
-        <Image
-        src={olillustration.src}
-        alt='ImagenOlive+'
-        width={1080}
-        height={1080}
-        />
+          <Image
+            src={olillustration.src}
+            alt='ImagenOlive+'
+            width={1080}
+            height={1080}
+          />
         </div>
-        
+
       </section>
 
       {/* Sección de Visión */}
       <section className="py-16 bg-green-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-8">Nuestra Visión</h2>
+          <h2 className="text-4xl font-bold text-center mb-8" >Nuestra Visión</h2>
           <p className="text-center text-lg max-w-3xl mx-auto">
             En Olive+, nos esforzamos por revolucionar la agricultura mediante tecnología innovadora y sostenible.
             Nuestra visión es crear un futuro donde cada gota de agua se utilice de manera eficiente,
@@ -253,11 +258,19 @@ export default function Home() {
       </section>
 
       {/* Sección de Estadísticas */}
-      <section ref={statsRef} className="py-16 bg-white">
+      <section
+  ref={statsRef}
+  className="py-16 bg-white bg-cover bg-center"
+  style={{
+    backgroundImage: `url('${vineyardback.src}')`,
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'cover',
+  }}
+>
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-8">Nuestro Impacto</h2>
+          <h2 className="text-5xl text-white font-bold text-center mb-8">Nuestro Impacto</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card>
+            <Card className="bg-white text-white bg-opacity-10 backdrop-blur-md border border-white/20 rounded-lg shadow-lg">
               <CardHeader>
                 <CardTitle className="flex items-center justify-center">
                   <Building className="mr-2" />
@@ -265,10 +278,13 @@ export default function Home() {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-4xl font-bold text-center">{clientesCount}</p>
+                <div className='flex justify-center'>
+                  <p className="text-4xl font-bold text-center">{clientesCount}</p>
+                </div>
+                
               </CardContent>
             </Card>
-            <Card>
+            <Card className="bg-white text-white bg-opacity-10 backdrop-blur-md border border-white/20 rounded-lg shadow-lg">
               <CardHeader>
                 <CardTitle className="flex items-center justify-center">
                   <Cpu className="mr-2" />
@@ -279,7 +295,7 @@ export default function Home() {
                 <p className="text-4xl font-bold text-center">{dispositivosCount}</p>
               </CardContent>
             </Card>
-            <Card>
+            <Card className="bg-white text-white bg-opacity-10 backdrop-blur-md border border-white/20 rounded-lg shadow-lg">
               <CardHeader>
                 <CardTitle className="flex items-center justify-center">
                   <Users className="mr-2" />
@@ -297,7 +313,7 @@ export default function Home() {
       {/* Carrusel de Clientes */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-8">Nuestros Clientes</h2>
+          <h2 className="text-4xl font-bold text-center mb-8">Nuestros Clientes</h2>
           <Carousel
             plugins={[
               Autoplay({
@@ -326,7 +342,7 @@ export default function Home() {
       {/* Sección de Módulos */}
       <section ref={modulosRef} className="py-16 bg-white-100">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-8">Nuestros Módulos</h2>
+          <h2 className="text-4xl font-bold text-center mb-8">Nuestros Módulos</h2>
           <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-10">
 
             <OliveModule
@@ -370,51 +386,51 @@ export default function Home() {
 
       {/* Sección de Contacto */}
       <section ref={contactoRef} className="py-16 bg-gray-50">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row items-center justify-between">
-          {/* Texto grande a la izquierda */}
-          <div className="w-full md:w-1/2 mb-8 md:mb-0">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary leading-tight">
-              Mantengamos<br />el contacto
-            </h2>
-            <p className="mt-4 text-xl text-gray-600">
-              Estamos aquí para responder a todas tus preguntas y ayudarte a optimizar tu sistema de riego.
-            </p>
-            
-            {/* Opciones de contacto adicionales */}
-            <div className="mt-8 space-y-4">
-              <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" className="flex items-center text-green-600 hover:text-green-700">
-                <MapPinIcon className="mr-2" />
-                Contáctanos por WhatsApp
-              </a>
-              <a href="https://goo.gl/maps/abcdefghijk" target="_blank" rel="noopener noreferrer" className="flex items-center text-blue-600 hover:text-blue-700">
-                <MapPinIcon className="mr-2" />
-                Encuéntranos en Google Maps
-              </a>
-              <a href="https://www.waze.com/ul?ll=12.345678%2C-98.765432&navigate=yes" target="_blank" rel="noopener noreferrer" className="flex items-center text-blue-600 hover:text-blue-700">
-                <MapPinIcon className="mr-2" />
-                Llega con Waze
-              </a>
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col md:flex-row items-center justify-between">
+            {/* Texto grande a la izquierda */}
+            <div className="w-full md:w-1/2 mb-8 md:mb-0">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary leading-tight">
+                Mantengamos<br />el contacto
+              </h2>
+              <p className="mt-4 text-xl text-gray-600">
+                Estamos aquí para responder a todas tus preguntas y ayudarte a optimizar tu sistema de riego.
+              </p>
+
+              {/* Opciones de contacto adicionales */}
+              <div className="mt-8 space-y-4">
+                <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" className="flex items-center text-green-600 hover:text-green-700">
+                  <MapPinIcon className="mr-2" />
+                  Contáctanos por WhatsApp
+                </a>
+                <a href="https://goo.gl/maps/abcdefghijk" target="_blank" rel="noopener noreferrer" className="flex items-center text-blue-600 hover:text-blue-700">
+                  <MapPinIcon className="mr-2" />
+                  Encuéntranos en Google Maps
+                </a>
+                <a href="https://www.waze.com/ul?ll=12.345678%2C-98.765432&navigate=yes" target="_blank" rel="noopener noreferrer" className="flex items-center text-blue-600 hover:text-blue-700">
+                  <MapPinIcon className="mr-2" />
+                  Llega con Waze
+                </a>
+              </div>
             </div>
+
+            {/* Formulario a la derecha */}
+            <Card className="w-full md:w-1/2 max-w-md">
+              <CardContent className="p-6">
+                <h3 className="text-2xl font-semibold mb-4">Envíanos un mensaje</h3>
+                <form className="space-y-4">
+                  <Input type="text" placeholder="Nombre" />
+                  <Input type="email" placeholder="Correo electrónico" />
+                  <Textarea placeholder="Mensaje" className="min-h-[100px]" />
+                  <Button type="submit" className="w-full text-white">
+                    <SendIcon className="mr-2 h-4 w-4" /> Enviar mensaje
+                  </Button>
+                </form>
+              </CardContent>
+            </Card>
           </div>
-          
-          {/* Formulario a la derecha */}
-          <Card className="w-full md:w-1/2 max-w-md">
-            <CardContent className="p-6">
-              <h3 className="text-2xl font-semibold mb-4">Envíanos un mensaje</h3>
-              <form className="space-y-4">
-                <Input type="text" placeholder="Nombre" />
-                <Input type="email" placeholder="Correo electrónico" />
-                <Textarea placeholder="Mensaje" className="min-h-[100px]" />
-                <Button type="submit" className="w-full text-white">
-                  <SendIcon className="mr-2 h-4 w-4" /> Enviar mensaje
-                </Button>
-              </form>
-            </CardContent>
-          </Card>
         </div>
-      </div>
-    </section>
+      </section>
 
       {/* Footer */}
       <footer className="bg-gray-800 text-white py-8">
