@@ -11,7 +11,7 @@ export default function OliveFeatures() {
   ]
 
   return (
-    <div className="bg-white p-6 rounded-lg shadow-lg ">
+    <div className=" p-6 ">
           <h2 className="text-3xl font-bold text-blue-600 mb-6">¿Qué hace OLIVE+?</h2>
           <div className="relative">
             <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-blue-400" />

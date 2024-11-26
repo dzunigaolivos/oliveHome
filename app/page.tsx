@@ -30,6 +30,8 @@ import planta from './public/images/iconplanta.png';
 import analisis from './public/images/dataanalitics.png';
 import olillustration from './public/images/olillustration.png';
 import vineyardback from './public/images/vineyardback.jpg';
+import NosotrosSection from '@/components/nosotros_section'
+import Estrategias from '@/components/estrategias'
 
 
 export default function Home() {
@@ -38,6 +40,7 @@ export default function Home() {
   const [dispositivosCount, setDispositivosCount] = useState(0)
   const [usuariosCount, setUsuariosCount] = useState(0)
   const [isStatsVisible, setIsStatsVisible] = useState(false)
+  const [activeExplanation, setActiveExplanation] = useState<number>(1); // Seleccionar el primer cuadro por defecto
   const modulosRef = useRef<HTMLElement>(null)
   const contactoRef = useRef<HTMLElement>(null)
   const statsRef = useRef<HTMLElement>(null)
@@ -126,7 +129,7 @@ export default function Home() {
       )}
 
       {/* Hero con video y logo */}
-      <section className="relative pt-16 h-[700px] overflow-hidden">
+      <section className="relative pt-16 h-screen overflow-hidden" id='section-welcome'>
         {/* Contenedor del video */}
         <div className="absolute inset-0 w-full md:w-1/2 md:left-1/2 h-full">
   <div className="w-full h-full overflow-hidden relative">
@@ -176,6 +179,62 @@ export default function Home() {
       </section>
 
 
+<section className="py-16 bg-white text-center h-screen flex items-center" id='bienvenidaText'>
+  <div className="container min-w-full px-0 flex flex-col md:flex-row items-center h-full">
+    <div className="w-full md:w-1/2 h-1/2 md:h-full relative">
+      <Image
+        src={vineyard.src}
+        alt="Monitoreo de Cultivo"
+        layout="fill"
+        objectFit="cover"
+        className="rounded-lg"
+      />
+    </div>
+    <div className="w-full md:w-1/2 p-8">
+      <h2 className="text-4xl font-bold mb-4">Bienvenido al Centro de Extensión Digital de Olive+</h2>
+      <p className="text-2xl text-gray-700 mb-4">
+        Innovación y aprendizaje para un futuro sostenible.
+      </p>
+      <p className="text-lg text-gray-600">
+        Un espacio creado para transformar la agricultura a través de la innovación, la educación y el acceso a herramientas tecnológicas. Aquí, conectamos a agricultores, expertos y entusiastas del sector con conocimientos prácticos, cursos interactivos y recursos digitales diseñados para impulsar prácticas sostenibles y maximizar la eficiencia en el uso del agua. Nuestro objetivo es ser el puente entre la tecnología de punta y un futuro agrícola más responsable y productivo. ¡Explora, aprende y crece con Olive+! 🌱🚀
+      </p>
+    </div>
+  </div>
+</section>
+<NosotrosSection/>
+
+<section className="py-2 bg-gray-100 w-100 h-screen flex items-start" id='tutorialesGuias'>
+  <div className="container min-w-full flex md:flex-row items-center items h-full">
+    <div className="w-full md:w-1/2 p-8 text-justify">
+      <h3 className="text-3xl font-bold mb-4">Tutoriales y Guías</h3>
+      <p className="text-lg text-gray-700 mb-4">
+        En Olive+, ofrecemos una sección de tutoriales y guías muy completa para que puedas utilizar nuestra plataforma en su máximo potencial. Aquí encontrarás:
+      </p>
+      <ul className="list-disc list-inside text-lg text-gray-700 mb-4">
+        <li>Guías paso a paso para configurar y utilizar Olive+.</li>
+        <li>Videos tutoriales que te mostrarán cómo aprovechar todas las funcionalidades.</li>
+        <li>Webinars en vivo y grabados para aprender de expertos en la materia.</li>
+      </ul>
+      <p className="text-lg text-gray-700 mb-4">
+        Nuestro objetivo es asegurarnos de que tengas todas las herramientas y conocimientos necesarios para optimizar el riego de tus cultivos y mejorar la productividad de manera sostenible.
+      </p>
+      <a href="/tutoriales" className='text-white'>
+        <Button>Ir a Tutoriales</Button>
+      </a>
+    </div>
+    <div className="w-full md:w-1/2 h-full relative">
+      <Image
+        src={vineyard.src}
+        alt="Monitoreo de Cultivo"
+        layout="fill"
+        objectFit="cover"
+        className="rounded-lg"
+        style={{ margin: 0 }}
+      />
+    </div>
+  </div>
+</section>
+
       {/*<section className="relative pt-16 h-[600px] overflow-hidden">
 
         <div className="absolute inset-0 w-full h-full">
@@ -217,33 +276,9 @@ export default function Home() {
       </section>*/}
 
       {/*seccion de explicacion */}
-      <section className='my-4'>
-        <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
-          <div className="hidden md:block w-full lg:h-[450px] md:h-[500px]  relative">
-            <Image
-              src={vineyard.src}
-              alt="Monitoreo de Cultivo"
-              fill
-              style={{ objectFit: 'cover' }}
-              className="w-full h-full object-cover rounded-lg"
-            />
-          </div>
-          <OliveFeatures />
 
-        </div>
-      </section>
 
-      <section className='my-4'>
-        <div className='flex bg-center self-center items-center justify-center bg-ilback'>
-          <Image
-            src={olillustration.src}
-            alt='ImagenOlive+'
-            width={1080}
-            height={1080}
-          />
-        </div>
-
-      </section>
+     
 
       {/* Sección de Visión */}
       <section className="py-16 bg-green-50">
