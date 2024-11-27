@@ -2,20 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react'
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Users, Cpu, Building } from "lucide-react"
-import { MapPinIcon, SendIcon } from "lucide-react"
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
 import Image from 'next/image';
-import Autoplay from "embla-carousel-autoplay";
 import SideModuleLeft from '@/components/side_module_left';
 import SideModuleRight from '@/components/side_module_right';
 //!Imagenes
@@ -28,9 +15,9 @@ import clima from './public/images/iconclima.png';
 import pozo from './public/images/iconfuente.png';
 import planta from './public/images/iconplanta.png';
 import analisis from './public/images/dataanalitics.png';
-import vineyardback from './public/images/vineyardback.jpg';
 import NosotrosSection from '@/components/nosotros_section'
 import { motion } from 'framer-motion';
+import BottomSection from '@/components/bottom_section';
 
 const fadeInVariants = {
   hidden: { opacity: 0 },
@@ -39,9 +26,6 @@ const fadeInVariants = {
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [clientesCount, setClientesCount] = useState(0)
-  const [dispositivosCount, setDispositivosCount] = useState(0)
-  const [usuariosCount, setUsuariosCount] = useState(0)
   const [isStatsVisible, setIsStatsVisible] = useState(false)
   const modulosRef = useRef<HTMLElement>(null)
   const contactoRef = useRef<HTMLElement>(null)
@@ -75,25 +59,7 @@ export default function Home() {
     }
   }, [])
 
-  useEffect(() => {
-    if (!isStatsVisible) return
-
-    const interval = setInterval(() => {
-      setClientesCount(prev => prev < 245 ? prev + 1 : 245)
-      setDispositivosCount(prev => prev < 620 ? prev + 1 : 620)
-      setUsuariosCount(prev => prev < 532 ? prev + 1 : 532)
-    }, 5)
-
-    return () => clearInterval(interval)
-  }, [isStatsVisible])
-
-  const clientes = [
-    { nombre: "Finca Los Olivos", logo: "./public/images/logo.png?height=100&width=100" },
-    { nombre: "Hacienda Verde", logo: "/placeholder.svg?height=100&width=100" },
-    { nombre: "Olivares del Sur", logo: "/placeholder.svg?height=100&width=100" },
-    { nombre: "Aceitunas Doradas", logo: "/placeholder.svg?height=100&width=100" },
-    { nombre: "Olivos del Valle", logo: "/placeholder.svg?height=100&width=100" },
-  ]
+  
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -215,6 +181,7 @@ export default function Home() {
     </div>
   </div>
 </motion.section>
+<NosotrosSection/>
 
 <motion.section
   className="py-16 bg-gray-100"
@@ -258,9 +225,6 @@ export default function Home() {
     />
   </div>
 </motion.section>
-
-<NosotrosSection/>
-
 <motion.section
   className="py-2 bg-gray-100 w-100 h-screen flex items-start"
   id='tutorialesGuias'
@@ -301,164 +265,7 @@ export default function Home() {
 </motion.section>
 
 
-<motion.section
-  className="py-16 bg-green-50"
-  initial="hidden"
-  whileInView="visible"
-  viewport={{ once: true }}
-  variants={fadeInVariants}
->
-  <div className="container mx-auto px-4">
-    <h2 className="text-4xl font-bold text-center mb-8">Nuestra Visión</h2>
-    <p className="text-center text-lg max-w-3xl mx-auto">
-      En Olive+, nos esforzamos por revolucionar la agricultura mediante tecnología innovadora y sostenible.
-      Nuestra visión es crear un futuro donde cada gota de agua se utilice de manera eficiente,
-      maximizando la producción agrícola mientras minimizamos el impacto ambiental.
-    </p>
-  </div>
-</motion.section>
-
-<motion.section
-  ref={statsRef}
-  className="py-16 bg-white bg-cover bg-center"
-  style={{
-    backgroundImage: `url('${vineyardback.src}')`,
-    backgroundRepeat: 'no-repeat',
-    backgroundSize: 'cover',
-  }}
-  initial="hidden"
-  whileInView="visible"
-  viewport={{ once: true }}
-  variants={fadeInVariants}
->
-  <div className="container mx-auto px-4">
-    <h2 className="text-5xl text-white font-bold text-center mb-8">Nuestro Impacto</h2>
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <Card className="bg-white text-white bg-opacity-10 backdrop-blur-md border border-white/20 rounded-lg shadow-lg">
-        <CardHeader>
-          <CardTitle className="flex items-center justify-center">
-            <Building className="mr-2" />
-            Clientes
-          </CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className='flex justify-center'>
-            <p className="text-4xl font-bold text-center">{clientesCount}</p>
-          </div>
-        </CardContent>
-      </Card>
-      <Card className="bg-white text-white bg-opacity-10 backdrop-blur-md border border-white/20 rounded-lg shadow-lg">
-        <CardHeader>
-          <CardTitle className="flex items-center justify-center">
-            <Cpu className="mr-2" />
-            Dispositivos
-          </CardTitle>
-        </CardHeader>
-        <CardContent>
-          <p className="text-4xl font-bold text-center">{dispositivosCount}</p>
-        </CardContent>
-      </Card>
-      <Card className="bg-white text-white bg-opacity-10 backdrop-blur-md border border-white/20 rounded-lg shadow-lg">
-        <CardHeader>
-          <CardTitle className="flex items-center justify-center">
-            <Users className="mr-2" />
-            Usuarios
-          </CardTitle>
-        </CardHeader>
-        <CardContent>
-          <p className="text-4xl font-bold text-center">{usuariosCount}</p>
-        </CardContent>
-      </Card>
-    </div>
-  </div>
-</motion.section>
-
-<motion.section
-  className="py-16 bg-gray-50"
-  initial="hidden"
-  whileInView="visible"
-  viewport={{ once: true }}
-  variants={fadeInVariants}
->
-  <div className="container mx-auto px-4">
-    <h2 className="text-4xl font-bold text-center mb-8">Nuestros Clientes</h2>
-    <Carousel
-      plugins={[
-        Autoplay({
-          delay: 2000,
-        }),
-      ]}
-      className="w-full max-w-xs mx-auto sm:max-w-sm md:max-w-md lg:max-w-screen-2xl xl:max-w-xxl"
-    >
-      <CarouselContent>
-        {clientes.map((cliente, index) => (
-          <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-            <Card className="m-1">
-              <CardContent className="flex items-start justify-center p-6">
-                <img src={cliente.logo} alt={`Logo de ${cliente.nombre}`} className="w-24 h-24 object-contain mb-4" />
-                <h3 className="text-lg font-semibold text-center">{cliente.nombre}</h3>
-              </CardContent>
-            </Card>
-          </CarouselItem>
-        ))}
-      </CarouselContent>
-      <CarouselPrevious />
-      <CarouselNext />
-    </Carousel>
-  </div>
-</motion.section>
-
-<motion.section
-  ref={contactoRef}
-  className="py-16 bg-gray-50"
-  initial="hidden"
-  whileInView="visible"
-  viewport={{ once: true }}
-  variants={fadeInVariants}
->
-  <div className="container mx-auto px-4">
-    <div className="flex flex-col md:flex-row items-center justify-between">
-      {/* Texto grande a la izquierda */}
-      <div className="w-full md:w-1/2 mb-8 md:mb-0">
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary leading-tight">
-          Mantengamos<br />el contacto
-        </h2>
-        <p className="mt-4 text-xl text-gray-600">
-          Estamos aquí para responder a todas tus preguntas y ayudarte a optimizar tu sistema de riego.
-        </p>
-        {/* Opciones de contacto adicionales */}
-        <div className="mt-8 space-y-4">
-          <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" className="flex items-center text-green-600 hover:text-green-700">
-            <MapPinIcon className="mr-2" />
-            Contáctanos por WhatsApp
-          </a>
-          <a href="https://goo.gl/maps/abcdefghijk" target="_blank" rel="noopener noreferrer" className="flex items-center text-blue-600 hover:text-blue-700">
-            <MapPinIcon className="mr-2" />
-            Encuéntranos en Google Maps
-          </a>
-          <a href="https://www.waze.com/ul?ll=12.345678%2C-98.765432&navigate=yes" target="_blank" rel="noopener noreferrer" className="flex items-center text-blue-600 hover:text-blue-700">
-            <MapPinIcon className="mr-2" />
-            Llega con Waze
-          </a>
-        </div>
-      </div>
-      {/* Formulario a la derecha */}
-      <Card className="w-full md:w-1/2 max-w-md">
-        <CardContent className="p-6">
-          <h3 className="text-2xl font-semibold mb-4">Envíanos un mensaje</h3>
-          <form className="space-y-4">
-            <Input type="text" placeholder="Nombre" />
-            <Input type="email" placeholder="Correo electrónico" />
-            <Textarea placeholder="Mensaje" className="min-h-[100px]" />
-            <Button type="submit" className="w-full text-white">
-              <SendIcon className="mr-2 h-4 w-4" /> Enviar mensaje
-            </Button>
-          </form>
-        </CardContent>
-      </Card>
-    </div>
-  </div>
-</motion.section>
+<BottomSection/>
 
       {/* Footer */}
       <footer className="bg-gray-800 text-white py-8">

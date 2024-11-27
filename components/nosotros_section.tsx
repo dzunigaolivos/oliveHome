@@ -39,7 +39,7 @@ const NosotrosSection = () => {
                 <div>
                   <h3 className="text-3xl font-bold mb-4">Qué Hacemos</h3>
                   <p className="text-lg text-gray-700">
-                    Aquí va el texto indicando qué es lo que hacemos.
+                  En Olive+, nos esforzamos por revolucionar la agricultura mediante tecnología innovadora y sostenible. Nuestra visión es crear un futuro donde cada gota de agua se utilice de manera eficiente, maximizando la producción agrícola mientras minimizamos el impacto ambiental.
                   </p>
                 </div>
               )}
