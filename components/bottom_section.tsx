@@ -2,14 +2,14 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Users, Cpu, Building } from "lucide-react";
 import { MapPinIcon, SendIcon } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import Image from 'next/image';
+//import Image from 'next/image';
 import Autoplay from "embla-carousel-autoplay";
 import { motion } from 'framer-motion';
 import { useState, useEffect, useRef } from 'react';
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
-import vineyardback from './../app/public/images/vineyardback.jpg';
+//import vineyardback from './../app/public/images/vineyardback.jpg';
 
 
 
@@ -68,17 +68,17 @@ const BottomSection: React.FC = () => {
 
   return (
     <motion.section
-      className="py-16 bg-cover bg-center"
-      style={{ backgroundImage: `url(${vineyardback.src})` }}
+      className="py-4 bg-cover bg-center bg-primary bg-opacity-90 text-white"
+      //style={{ backgroundImage: `url(${vineyardback.src})` }}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
       variants={fadeInVariants}
     >
-      <div className="container mx-auto px-4 flex flex-col md:flex-row">
+      <div className="min-w-full px-4 container flex flex-col md:flex-row justify-between">
         <div className="w-full md:w-1/2">
           <div ref={statsRef} className="mb-8">
-            <h2 className="text-3xl text-white font-bold  mb-8">Nuestro Impacto</h2>
+            <h2 className="text-3xl text-white font-bold  mb-4">Nuestro Impacto</h2>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8 ">
               <Card className="bg-white text-white bg-opacity-10 backdrop-blur-md border border-white/20 rounded-lg shadow-lg">
                 <CardHeader>
@@ -117,8 +117,8 @@ const BottomSection: React.FC = () => {
               </Card>
             </div>
           </div>
-          <div className="mb-8">
-            <h2 className="text-4xl font-bold text-center mb-8">Nuestros Clientes</h2>
+          <div className="mb-8 w-5/6">
+            <h2 className="text-4xl font-bold mb-4">Nuestros Clientes</h2>
             <Carousel
               plugins={[
                 Autoplay({
@@ -144,15 +144,15 @@ const BottomSection: React.FC = () => {
             </Carousel>
           </div>
         </div>
-        <div className="w-full md:w-1/2 ">
-          <div className="p-8 bg-gray-50 rounded-lg shadow-lg bg-white text-white bg-opacity-10 backdrop-blur-md border border-white/20 rounded-lg shadow-lg">
-            <h2 className="text-3xl md:text-4xl lg:text-4xl font-bold text-primary leading-tight mb-4">
+        <div className="w-full md:w-1/2">
+          <div className="p-8 bg-white text-white bg-opacity-10 backdrop-blur-md border border-white/20 rounded-lg shadow-lg">
+            <h2 className="text-3xl md:text-4xl lg:text-4xl font-bold text-white leading-tight mb-4">
               Mantengamos<br />el contacto
             </h2>
-            <p className="text-md text-gray-600 mb-8">
+            <p className="text-md text-gray-200 mb-8">
               Estamos aquí para responder a todas tus preguntas y ayudarte a optimizar tu sistema de riego.
             </p>
-            <div className="flex ">
+            <div className="flex flex-column  justify-between">
             <div className="space-y-4 mb-8">
               <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" className="flex items-center text-green-600 hover:text-green-700">
                 <MapPinIcon className="mr-2" />

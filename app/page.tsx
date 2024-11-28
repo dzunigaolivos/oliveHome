@@ -26,7 +26,7 @@ const fadeInVariants = {
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [isStatsVisible, setIsStatsVisible] = useState(false)
+  //const [isStatsVisible, setIsStatsVisible] = useState(false)
   const modulosRef = useRef<HTMLElement>(null)
   const contactoRef = useRef<HTMLElement>(null)
   const statsRef = useRef<HTMLElement>(null)
@@ -42,7 +42,7 @@ export default function Home() {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsStatsVisible(true)
+          //setIsStatsVisible(true)
         }
       },
       { threshold: 1 }
@@ -268,7 +268,7 @@ export default function Home() {
 <BottomSection/>
 
       {/* Footer */}
-      <footer className="bg-gray-800 text-white py-8">
+      <footer className="bg-primary text-white py-8">
         <div className="container mx-auto px-4 text-center">
           <p>&copy; 2024 Olive+. Todos los derechos reservados.</p>
         </div>
