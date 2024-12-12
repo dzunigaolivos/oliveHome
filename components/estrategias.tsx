@@ -6,7 +6,7 @@ const Estrategias = () => {
 
   return (
     <div className="container mx-auto px-4">
-      <h2 className="text-4xl font-bold text-center mb-8">Estrategias de Riego Compatibles</h2>
+      <h2 className="text-4xl text-whit font-bold text-center mb-8">Estrategias de Riego Compatibles</h2>
       <div className="flex justify-center mb-8 space-x-4">
         <div
           className={`cursor-pointer w-[15%] h-80 rounded-full flex items-center justify-center relative overflow-hidden`}

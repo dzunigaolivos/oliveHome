@@ -99,6 +99,7 @@ const config: Config = {
 			chartHigh: '#5BC0DE', // kchartHigh
 			chartMedium: '#4CAF50', // kchartMedium
 			bubbleInfo: '#008891', // kbubbleinfo
+			whit:'#f9f9f9', // kwhit
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {

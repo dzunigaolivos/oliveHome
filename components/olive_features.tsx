@@ -21,7 +21,7 @@ export default function OliveFeatures() {
                   <div className="flex-shrink-0 w-8 h-8 rounded-full border-2 border-blue-400 bg-white flex items-center justify-center mr-4 z-10">
                     <Check className="w-5 h-5 text-blue-600" />
                   </div>
-                  <p className="text-gray-700">{feature}</p>
+                  <p className="text-whit">{feature}</p>
                 </li>
               ))}
             </ul>
