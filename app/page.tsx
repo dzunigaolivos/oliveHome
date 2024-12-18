@@ -16,6 +16,14 @@ import planta from './public/images/iconplanta.png';
 import fondocentro from './public/images/fondocentro.jpg';
 import fondotuto from './public/images/fondotuto.jpg';
 import analisis from './public/images/dataanalitics.png';
+import mainModules from './public/images/mainModules.png';
+import desktopClima from './public/images/desktopClima.png';
+import desktopPlanta from './public/images/desktopPlanta.png';
+import desktopRiego from './public/images/desktopRiego.png';
+import desktopSuelo from './public/images/desktopSuelo.png';
+import desktopPozo from './public/images/desktopPozo.png';
+import desktopAnalisis from './public/images/desktopAnalisis.png';
+import backPlanta from './public/images/backPlanta.jpg';
 import NosotrosSection from '@/components/nosotros_section'
 import { motion } from 'framer-motion';
 import BottomSection from '@/components/bottom_section';
@@ -99,7 +107,7 @@ export default function Home() {
 
       {/* Hero con video y logo */}
       <section
-  className="relative pt-16 h-screen overflow-hidden"
+  className="relative pt-16 h-screen overflow-hidden w-full"
   id='section-welcome'
 >
   <motion.div
@@ -109,10 +117,9 @@ export default function Home() {
     variants={fadeInVariants}
   >
     {/* Contenedor del video */}
-    <div className="absolute inset-0 w-full   h-full">
+    <div className="absolute inset-0 w-full h-full">
       <div className="w-full h-full overflow-hidden relative">
         {/* Contenedor superpuesto para el efecto de glassmorphism */}
-        
         {/* Video de YouTube */}
         <iframe
           className="absolute top-0 left-0 w-full h-full"
@@ -130,26 +137,35 @@ export default function Home() {
             transformOrigin: 'center center',
           }}
         />
+        {/* Gradient overlay */}
+        <div className="absolute inset-0 w-full h-full bg-gradient-to-b from-transparent to-black opacity-50"></div>
       </div>
     </div>
     {/* Overlay para cubrir todo y prevenir clics en el video */}
     <div className="absolute inset-0 bg-black bg-opacity-20 md:bg-opacity-0"></div>
     {/* Fondo sólido para el lado izquierdo en dispositivos medianos y grandes */}
-    
     {/* Contenido (texto) */}
     <div className="absolute z-10 flex items-center justify-start h-full w-full">
-      <div className="px-4 sm:px-8 md:px-12 lg:px-16 w-full md:w-3/4">
-        <h1 className="text-whit text-shadow-outline text-3xl sm:text-4xl md:text-5xl lg:text-8xl font-bold">La manera más fácil de </h1>
-        <h1 className="text-whit text-shadow-outline text-3xl sm:text-4xl md:text-5xl lg:text-8xl font-bold">gestionar tu riego,</h1>
-        <h1 className="text-whit text-shadow-outline text-3xl sm:text-4xl md:text-5xl lg:text-8xl font-bold">ahora a tu alcance</h1>
+      <div className="px-4 sm:px-8 md:px-12 lg:px-16 w-full md:w-3/4 relative">
+        <h1 className="text-whit text-shadow-outline text-3xl sm:text-4xl md:text-5xl lg:text-7xl 2xl:text-8xl font-bold">La manera más fácil de </h1>
+        <h1 className="text-whit text-shadow-outline text-3xl sm:text-4xl md:text-5xl lg:text-7xl 2xl:text-8xl font-bold">gestionar tu riego,</h1>
+        <h1 className="text-whit text-shadow-outline text-3xl sm:text-4xl md:text-5xl lg:text-7xl 2xl:text-8xl font-bold">ahora a tu alcance</h1>
         <Image
           className='mt-4'
           src={logo.src}
           alt="Olive+"
           width={450}
           height={100} />
+        
       </div>
     </div>
+    <Image
+          src={mainModules.src} // Change this to the desired image path
+          alt="Background Image"
+          width={450}
+          height={100}
+          className="absolute bottom-10 right-0 h-[60vh] w-auto z-0"
+        />
   </motion.div>
 </section>
 
@@ -187,41 +203,47 @@ export default function Home() {
 <motion.section
   className="py-16 bg-gray-100"
 >
-  <div className="container mx-auto px-4">
+  <div className="container">
     <SideModuleLeft
       title="Módulo Riego"
       description="Podrás revisar los volúmenes aplicados por sector, analizar el porcentaje de desviación de los caudales planificados respecto a los reales, monitorear las alarmas en tiempo real para identificar desviaciones críticas, y realizar comparaciones detalladas con datos históricos de temporadas anteriores. Esto te permitirá obtener una visión integral para optimizar el uso de los recursos hídricos y tomar decisiones informadas basadas en patrones y tendencias identificadas."
       moduleImageSrc={riego.src}
+      additionalImageSrc={desktopRiego.src}
       backgroundImageSrc={vineyard.src}
     />
     <SideModuleRight
       title="Módulo Pozo"
       description="Monitorea en tiempo real el caudal y el nivel freático de tus pozos, con herramientas avanzadas para la generación de reportes automáticos, incluyendo los requeridos por la DGA. Este módulo te permite realizar un seguimiento eficiente de los parámetros críticos, identificar posibles anomalías y garantizar el cumplimiento normativo, facilitando una gestión hídrica más precisa y sostenible"
       moduleImageSrc={pozo.src}
+      additionalImageSrc={desktopPozo.src}
       backgroundImageSrc={vineyard.src}
     />
     <SideModuleLeft
       title="Módulo Suelo"
       description="Monitorea la humedad del suelo en tiempo real en función de los riegos aplicados, permitiéndote evaluar la eficacia del riego y la disponibilidad hídrica para los cultivos. Además, este módulo gestiona umbrales personalizados de toma de decisiones, brindándote alertas oportunas y recomendaciones para ajustar las estrategias de riego según los niveles de humedad detectados. Optimiza el uso del agua y mejora la productividad agrícola de manera sostenible."
       moduleImageSrc={suelo.src}
+      additionalImageSrc={desktopSuelo.src}
       backgroundImageSrc={vineyard.src}
     />
     <SideModuleRight
       title="Módulo Clima"
       description="Monitorea en tiempo real las principales variables climáticas, como temperatura, humedad, velocidad y dirección del viento, radiación solar y precipitaciones. Este módulo proporciona información clave para anticipar condiciones meteorológicas, optimizar las decisiones agrícolas y ajustar las estrategias de manejo según los cambios climáticos, maximizando la eficiencia de tus recursos."
       moduleImageSrc={clima.src}
+      additionalImageSrc={desktopClima.src}
       backgroundImageSrc={vineyard.src}
     />
     <SideModuleLeft
       title="Módulo Planta"
       description="Monitorea sensores instalados directamente en los árboles para obtener información precisa y en tiempo real sobre su estado hídrico y fisiológico. Además, permite registrar de forma manual el potencial hídrico de las plantas, integrando estos datos en análisis detallados que ayudan a tomar decisiones informadas sobre el manejo de riego y la salud de los cultivos. Este módulo te ofrece un enfoque avanzado para maximizar la eficiencia y productividad de tus plantaciones."
       moduleImageSrc={planta.src}
-      backgroundImageSrc={vineyard.src}
+      additionalImageSrc={desktopPlanta.src}
+      backgroundImageSrc={backPlanta.src}
     />
     <SideModuleRight
       title="Módulo Análisis de datos"
       description="Explora información clave a través de paneles personalizados, diseñados específicamente para adaptarse a tus necesidades. Este módulo te permite visualizar tendencias, identificar patrones y generar reportes detallados para una mejor toma de decisiones. Integra datos de distintos módulos, ofreciendo una perspectiva global y precisa que facilita la gestión eficiente de tus recursos y estrategias."
       moduleImageSrc={analisis.src}
+      additionalImageSrc={desktopAnalisis.src}
       backgroundImageSrc={vineyard.src}
     />
   </div>

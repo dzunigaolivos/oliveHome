@@ -9,7 +9,10 @@ import { useState, useEffect, useRef } from 'react';
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
-//import vineyardback from './../app/public/images/vineyardback.jpg';
+import cytLogo from './../app/public/images/cyt_logo.jpg';
+import agroLogo from './../app/public/images/logo_agrofarming.jpg';
+import sofrucoLogo from './../app/public/images/logo_sofruco.jpg';
+import casasLogo from './../app/public/images/riopeumo_logo.png';
 
 
 
@@ -54,11 +57,10 @@ const BottomSection: React.FC = () => {
   }, [isStatsVisible]);
 
   const clientes = [
-    { nombre: "Finca Los Olivos", logo: "./public/images/logo.png?height=100&width=100" },
-    { nombre: "Hacienda Verde", logo: "/placeholder.svg?height=100&width=100" },
-    { nombre: "Olivares del Sur", logo: "/placeholder.svg?height=100&width=100" },
-    { nombre: "Aceitunas Doradas", logo: "/placeholder.svg?height=100&width=100" },
-    { nombre: "Olivos del Valle", logo: "/placeholder.svg?height=100&width=100" },
+    { nombre: "Concha y toro", logo: cytLogo.src },
+    { nombre: "AgroFarming", logo: agroLogo.src },
+    { nombre: "Sofruco", logo: sofrucoLogo.src },
+    { nombre: "Casas de rio peumo", logo: casasLogo.src },
   ]
 
   const fadeInVariants = {
@@ -129,10 +131,12 @@ const BottomSection: React.FC = () => {
             >
               <CarouselContent>
                 {clientes.map((cliente, index) => (
-                  <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                    <Card className="m-1">
-                      <CardContent className="flex items-start justify-center p-6">
-                        <img src={cliente.logo} alt={`Logo de ${cliente.nombre}`} className="w-24 h-24 object-contain mb-4" />
+                  <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/2">
+                    <Card className="m-1 bg-white text-white bg-opacity-10 backdrop-blur-md border border-white/20 rounded-lg shadow-lg">
+                      <CardContent className="flex items-stretch p-6">
+                        <div className={`${cliente.nombre == 'Casas de rio peumo' ? 'w-28': 'w-24'} h-24 bg-white rounded-full flex items-center justify-center mb-4`}>
+                          <img src={cliente.logo} alt={`Logo de ${cliente.nombre}`} className="w-20 h-20 object-contain rounded-full" />
+                        </div>
                         <h3 className="text-lg font-semibold text-center">{cliente.nombre}</h3>
                       </CardContent>
                     </Card>
