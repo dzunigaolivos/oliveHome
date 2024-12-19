@@ -186,7 +186,7 @@ export default function Home() {
   initial="hidden"
   whileInView="visible"
   viewport={{ once: true }}
-  variants={fadeInFromRightVariants}
+  variants={fadeInVariants}
 >
   <div className="absolute inset-0 w-full h-full">
     <Image

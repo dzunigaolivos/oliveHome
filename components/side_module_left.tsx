@@ -17,7 +17,7 @@ const fadeInFromLeftVariants = {
 const SideModuleLeft: React.FC<SideModuleLeftProps> = ({ title, description, moduleImageSrc, backgroundImageSrc, additionalImageSrc }) => {
   return (
     <motion.div
-      className="flex flex-col items-center md:items-end relative w-screen pb-1"
+      className="flex flex-col items-center md:items-end relative  w-screen md:w-[98.5vw] pb-1"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
