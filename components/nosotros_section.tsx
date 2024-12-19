@@ -34,7 +34,7 @@ const NosotrosSection = () => {
   return (
     <section
       id='nosotrosSection'
-      className={`py-8 my-10 h-[75vh] relative transition-opacity duration-500 ${fade ? 'opacity-90' : 'opacity-100'}`}
+      className={`py-8 my-2 h-[75vh] relative transition-opacity duration-500 ${fade ? 'opacity-90' : 'opacity-100'}`}
       style={{ backgroundImage: `url(${backgroundImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
     >
       <div className="absolute inset-0 bg-black bg-opacity-50"></div>

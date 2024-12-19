@@ -6,9 +6,6 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import Autoplay from "embla-carousel-autoplay";
 import { motion } from 'framer-motion';
 import { useState, useEffect, useRef } from 'react';
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Button } from "@/components/ui/button"
 import cytLogo from './../app/public/images/cyt_logo.jpg';
 import agroLogo from './../app/public/images/logo_agrofarming.jpg';
 import sofrucoLogo from './../app/public/images/logo_sofruco.jpg';
@@ -70,14 +67,14 @@ const BottomSection: React.FC = () => {
 
   return (
     <motion.section
-      className="py-4 bg-cover bg-center bg-primary bg-opacity-90 text-white"
+      className="py-4 bg-cover bg-center bg-primary bg-opacity-90 text-white relative"
       //style={{ backgroundImage: `url(${vineyardback.src})` }}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
       variants={fadeInVariants}
     >
-      <div className="min-w-full px-4 container flex flex-col md:flex-row justify-between">
+      <div className="relative z-10 min-w-full px-4 container flex flex-row md:flex-row justify-between">
         <div className="w-full md:w-1/2">
           <div ref={statsRef} className="mb-8">
             <h2 className="text-3xl text-white font-bold  mb-4">Nuestro Impacto</h2>
@@ -148,7 +145,7 @@ const BottomSection: React.FC = () => {
             </Carousel>
           </div>
         </div>
-        <div className="w-full md:w-1/2">
+        {/*<div className="w-full md:w-1/2">
           <div className="p-8 bg-white text-white bg-opacity-10 backdrop-blur-md border border-white/20 rounded-lg shadow-lg">
             <h2 className="text-3xl md:text-4xl lg:text-4xl font-bold text-white leading-tight mb-4">
               Mantengamos<br />el contacto
@@ -183,11 +180,11 @@ const BottomSection: React.FC = () => {
                   </Button>
                 </form>
               </CardContent>
-            </Card>
+            </Card>*
             </div>
             
           </div>
-        </div>
+        </div>*/}
       </div>
     </motion.section>
   );
