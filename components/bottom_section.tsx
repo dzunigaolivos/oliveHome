@@ -1,6 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Users, Cpu, Building } from "lucide-react";
-import { MapPinIcon, SendIcon } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 //import Image from 'next/image';
 import Autoplay from "embla-carousel-autoplay";

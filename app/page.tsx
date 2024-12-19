@@ -7,7 +7,6 @@ import SideModuleLeft from '@/components/side_module_left';
 import SideModuleRight from '@/components/side_module_right';
 //!Imagenes
 import logo from './public/images/logo.png';
-import vineyard from './public/images/vineyard.jpg';
 import riego from './public/images/eficienciawidget.png';
 import suelo from './public/images/iconsuelo.png';
 import clima from './public/images/iconclima.png';
@@ -135,7 +134,7 @@ export default function Home() {
         {/* Video de YouTube */}
         <iframe
           className="absolute top-0 left-0 w-full h-full"
-          src="https://www.youtube.com/embed/yVrcQaSgjMo-j0?si=mriAys8yUvuIdt9K&autoplay=1&loop=1&mute=1&controls=0&playlist=V9Bb1fyh-j0"
+          src="https://www.youtube.com/embed/yVrcQaSgjMo?si=mriAys8yUvuIdt9K&autoplay=1&loop=1&mute=1&controls=0&playlist=yVrcQaSgjMo"
           allow="autoplay; encrypted-media"
           allowFullScreen
           title="Video de fondo de Olive+"
@@ -213,7 +212,7 @@ export default function Home() {
 <div className='text-5xl text-blk px-28 py-4 tracking-tighter'> Sembramos <span className='font-bold'>Calidad</span>, Cosechamos <span className='font-bold'>Confianza</span></div>
 <NosotrosSection/>
 
-<div className='text-6xl text-blk px-28 py-4 tracking-tighter'> Hazlo <span className='font-bold'>Fácil</span>, Hazlo <span className='font-bold'>Mejor</span><hr/></div>
+<div className='text-6xl text-blk px-28 py-4 tracking-tighter'> Hazlo <span className='font-bold'>Fácil</span>, Hazlo <span className='font-bold'>Mejor</span></div>
 <motion.section
   className="py-2 bg-gray-100"
 >
@@ -262,7 +261,7 @@ export default function Home() {
     />
   </div>
 </motion.section>
-<div className='text-6xl text-blk px-28 py-4 tracking-tighter'>Aprende  <span className='font-bold'>Fácil</span>, Crece <span className='font-bold'>Con Nosotros</span><hr/></div>
+<div className='text-6xl text-blk px-28 py-4 tracking-tighter'>Aprende  <span className='font-bold'>Fácil</span>, Crece <span className='font-bold'>Con Nosotros</span></div>
 <motion.section
   className="py-2 bg-gray-100 w-100 h-[80vh] flex items-start relative"
   id='tutorialesGuias'
@@ -313,7 +312,7 @@ export default function Home() {
               </a>
 
   </div>
-<div className='text-6xl text-blk px-28 py-4 tracking-tighter'>Ellos  <span className='font-bold'>Cultivan</span>, Con <span className='font-bold'>Nosotros</span><hr/></div>
+<div className='text-6xl text-blk px-28 py-4 tracking-tighter'>Ellos  <span className='font-bold'>Cultivan</span>, Con <span className='font-bold'>Nosotros</span></div>
 
 <BottomSection/>
 
