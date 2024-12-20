@@ -53,10 +53,21 @@ const BottomSection: React.FC = () => {
   }, [isStatsVisible]);
 
   const clientes = [
-    { nombre: "Concha y toro", logo: cytLogo.src },
-    { nombre: "AgroFarming", logo: agroLogo.src },
-    { nombre: "Sofruco", logo: sofrucoLogo.src },
-    { nombre: "Casas de rio peumo", logo: casasLogo.src },
+    { nombre: "Concha y toro", 
+      logo: cytLogo.src ,
+      descripcion: "tiene un monton de cosas" },
+    { nombre: "AgroFarming", 
+      logo: agroLogo.src,
+      descripcion: "Tiene Cosas"
+    },
+    { nombre: "Sofruco", 
+      logo: sofrucoLogo.src,
+      descripcion: "Tiene Otras cosas"
+    },
+    { nombre: "Casas de rio peumo", 
+      logo: casasLogo.src,
+      descripcion: "Tiene todas las cosas"
+    },
   ]
 
   const fadeInVariants = {
@@ -73,15 +84,15 @@ const BottomSection: React.FC = () => {
       viewport={{ once: true }}
       variants={fadeInVariants}
     >
-      <div className="relative z-10 min-w-full px-4 container flex flex-row md:flex-row justify-between">
+      <div className="relative z-10 min-w-full px-4 container flex flex-col md:flex-row justify-between">
         <div className="w-full md:w-1/2">
           <div ref={statsRef} className="mb-8">
-            <h2 className="text-3xl text-white font-bold  mb-4">Nuestro Impacto</h2>
+            <h2 className="text-3xl text-white  mb-4">Nuestro <span className="font-bold">Impacto</span></h2>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8 ">
               <Card className="bg-white text-white bg-opacity-10 backdrop-blur-md border border-white/20 rounded-lg shadow-lg">
                 <CardHeader>
-                  <CardTitle className="flex items-center justify-center">
-                    <Building className="mr-2" />
+                  <CardTitle className="flex items-center justify-center text-lg md:text-base sm:text-sm">
+                    <Building className="mr-2 " />
                     Clientes
                   </CardTitle>
                 </CardHeader>
@@ -93,7 +104,7 @@ const BottomSection: React.FC = () => {
               </Card>
               <Card className="bg-white text-white bg-opacity-10 backdrop-blur-md border border-white/20 rounded-lg shadow-lg">
                 <CardHeader>
-                  <CardTitle className="flex items-center justify-center">
+                  <CardTitle className="flex items-center justify-center text-lg md:text-base sm:text-sm">
                     <Cpu className="mr-2" />
                     Dispositivos
                   </CardTitle>
@@ -104,7 +115,7 @@ const BottomSection: React.FC = () => {
               </Card>
               <Card className="bg-white text-white bg-opacity-10 backdrop-blur-md border border-white/20 rounded-lg shadow-lg">
                 <CardHeader>
-                  <CardTitle className="flex items-center justify-center">
+                  <CardTitle className="flex items-center justify-center text-lg md:text-base sm:text-sm">
                     <Users className="mr-2" />
                     Usuarios
                   </CardTitle>
@@ -115,8 +126,10 @@ const BottomSection: React.FC = () => {
               </Card>
             </div>
           </div>
-          <div className="mb-8 w-5/6">
-            <h2 className="text-4xl font-bold mb-4">Nuestros Clientes</h2>
+        </div>
+        <div className="w-full md:w-1/2">
+          <div className="mb-8 w-full">
+            <h2 className="text-3xl mb-4">Nuestros <span className="font-bold">Clientes</span></h2>
             <Carousel
               plugins={[
                 Autoplay({
@@ -130,10 +143,13 @@ const BottomSection: React.FC = () => {
                   <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/2">
                     <Card className="m-1 bg-white text-white bg-opacity-10 backdrop-blur-md border border-white/20 rounded-lg shadow-lg">
                       <CardContent className="flex items-stretch p-6">
-                        <div className={`${cliente.nombre == 'Casas de rio peumo' ? 'w-28': 'w-24'} h-24 bg-white rounded-full flex items-center justify-center mb-4`}>
+                        <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center mb-4">
                           <img src={cliente.logo} alt={`Logo de ${cliente.nombre}`} className="w-20 h-20 object-contain rounded-full" />
                         </div>
-                        <h3 className="text-lg font-semibold text-center">{cliente.nombre}</h3>
+                        <div className="ml-2">
+                          <h3 className="text-lg font-semibold text-left">{cliente.nombre}</h3>
+                          <p className="text-sm text-left text-white">{cliente.descripcion}</p>
+                        </div>
                       </CardContent>
                     </Card>
                   </CarouselItem>
@@ -144,46 +160,6 @@ const BottomSection: React.FC = () => {
             </Carousel>
           </div>
         </div>
-        {/*<div className="w-full md:w-1/2">
-          <div className="p-8 bg-white text-white bg-opacity-10 backdrop-blur-md border border-white/20 rounded-lg shadow-lg">
-            <h2 className="text-3xl md:text-4xl lg:text-4xl font-bold text-white leading-tight mb-4">
-              Mantengamos<br />el contacto
-            </h2>
-            <p className="text-md text-gray-200 mb-8">
-              Estamos aquí para responder a todas tus preguntas y ayudarte a optimizar tu sistema de riego.
-            </p>
-            <div className="flex flex-column  justify-between">
-            <div className="space-y-4 mb-8">
-              <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" className="flex items-center text-green-600 hover:text-green-700">
-                <MapPinIcon className="mr-2" />
-                Contáctanos por WhatsApp
-              </a>
-              <a href="https://goo.gl/maps/abcdefghijk" target="_blank" rel="noopener noreferrer" className="flex items-center text-blue-600 hover:text-blue-700">
-                <MapPinIcon className="mr-2" />
-                Encuéntranos en Google Maps
-              </a>
-              <a href="https://www.waze.com/ul?ll=12.345678%2C-98.765432&navigate=yes" target="_blank" rel="noopener noreferrer" className="flex items-center text-blue-600 hover:text-blue-700">
-                <MapPinIcon className="mr-2" />
-                Llega con Waze
-              </a>
-            </div>
-            <Card className="w-full max-w-md">
-              <CardContent className="p-6">
-                <h3 className="text-2xl font-semibold mb-4">Envíanos un mensaje</h3>
-                <form className="space-y-4">
-                  <Input type="text" placeholder="Nombre" />
-                  <Input type="email" placeholder="Correo electrónico" />
-                  <Textarea placeholder="Mensaje" className="min-h-[100px]" />
-                  <Button type="submit" className="w-full text-white">
-                    <SendIcon className="mr-2 h-4 w-4" /> Enviar mensaje
-                  </Button>
-                </form>
-              </CardContent>
-            </Card>*
-            </div>
-            
-          </div>
-        </div>*/}
       </div>
     </motion.section>
   );
