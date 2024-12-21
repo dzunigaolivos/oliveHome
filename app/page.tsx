@@ -129,7 +129,7 @@ export default function Home() {
         {/* Video de YouTube */}
         <iframe
           className="absolute top-0 left-0 w-full h-full"
-          src="https://www.youtube.com/embed/yVrcQaSgjMo?autoplay=1&loop=1&mute=1&controls=0&playlist=yVrcQaSgjMo"
+          src="https://www.youtube.com/embed/re1g7DogNRc?autoplay=1&mute=1&loop=1&playlist=re1g7DogNRc"
           allow="autoplay; encrypted-media"
           allowFullScreen
           title="Video de fondo de Olive+"
