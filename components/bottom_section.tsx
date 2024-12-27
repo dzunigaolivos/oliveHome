@@ -77,14 +77,14 @@ const BottomSection: React.FC = () => {
 
   return (
     <motion.section
-      className="py-4 bg-cover bg-center bg-primary bg-opacity-90 text-white relative"
+      className="py-4  bg-cover bg-center bg-primary bg-opacity-90 text-white relative"
       //style={{ backgroundImage: `url(${vineyardback.src})` }}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
       variants={fadeInVariants}
     >
-      <div className="relative z-10 min-w-full px-4 container flex flex-col md:flex-row justify-between">
+      <div className="relative z-10 px-4 container flex flex-col md:flex-row justify-between">
         <div className="w-full md:w-1/2">
           <div ref={statsRef} className="mb-8">
             <h2 className="text-3xl text-white  mb-4">Nuestro <span className="font-bold">Impacto</span></h2>

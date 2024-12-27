@@ -10,8 +10,8 @@ interface SideModuleRightProps {
 }
 
 const fadeInFromRightVariants = {
-  hidden: { opacity: 0, x: 100 },
-  visible: { opacity: 1, x: 0, transition: { duration: 1 } },
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { duration: 2 } },
 };
 
 const SideModuleRight: React.FC<SideModuleRightProps> = ({ title, description, moduleImageSrc, backgroundImageSrc, additionalImageSrc }) => {
@@ -37,7 +37,7 @@ const SideModuleRight: React.FC<SideModuleRightProps> = ({ title, description, m
           <div className="flex flex-col items-start">
             <Image src={moduleImageSrc} alt={title} width={80} height={80} className="rounded-lg mb-4" />
             <h3 className="text-3xl font-bold mb-4 text-white text-left">{title}</h3>
-            <p className="text-lg text-white mb-4 text-justify mr-36">{description}</p>
+            <p className="text-lg text-white mb-4 text-justify lg:pr-36 sm:mr-3 md:mr-3">{description}</p>
           </div>
         </div>
       </div>

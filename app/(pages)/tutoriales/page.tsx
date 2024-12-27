@@ -16,6 +16,12 @@ import dataanalitics from '../../public/images/dataanalitics.png';
 import iconriego from '../../public/images/iconriego.png';
 import vineyard from '../../public/images/vineyardback.jpg';
 
+interface VideoData {
+  id: number;
+  youtubeId: string;
+  title: string;
+}
+
 interface TutorialData {
   id: number;
   name: string;
@@ -25,14 +31,6 @@ interface TutorialData {
   fontcolor?: string;
   iconRoute: string;
   videos: VideoData[];
-}
-
-interface VideoData {
-  id: number;
-  title: string;
-  duration: string;
-  youtubeId: string;
-  fontcolor?: string;
 }
 
 const tutorialData: TutorialData[] = [
@@ -45,8 +43,6 @@ const tutorialData: TutorialData[] = [
     fontcolor: 'text-white',
     description: 'Aprende a configurar Olive+ para empezar a usarlo.',
     videos: [
-      { id: 1, title: 'Instalación de Olive+', duration: '5:30', youtubeId: 'VIDEO_ID_1', fontcolor: 'text-white' },
-      { id: 2, title: 'Configuración de la cuenta', duration: '3:45', youtubeId: 'VIDEO_ID_2', fontcolor: 'text-white' },
     ],
   },
   {
@@ -58,8 +54,7 @@ const tutorialData: TutorialData[] = [
     icon: Droplet,
     description: 'Gestiona eficientemente los recursos hídricos de tu pozo.',
     videos: [
-      { id: 3, title: 'Monitoreo de niveles de agua', duration: '7:20', youtubeId: 'VIDEO_ID_3' },
-      { id: 4, title: 'Configuración de alertas', duration: '4:55', youtubeId: 'VIDEO_ID_4' },
+    
     ],
   },
   {
@@ -71,8 +66,7 @@ const tutorialData: TutorialData[] = [
     icon: Cloud,
     description: 'Utiliza datos climáticos para tomar decisiones informadas.',
     videos: [
-      { id: 7, title: 'Interpretación de pronósticos', duration: '6:45', youtubeId: 'VIDEO_ID_7' },
-      { id: 8, title: 'Ajuste de riego según condiciones climáticas', duration: '5:15', youtubeId: 'VIDEO_ID_8' },
+     
     ],
   },
   {
@@ -84,8 +78,7 @@ const tutorialData: TutorialData[] = [
     iconRoute: iconsuelo.src,
     description: 'Optimiza el manejo del suelo para un mejor rendimiento de cultivos.',
     videos: [
-      { id: 5, title: 'Análisis de humedad del suelo', duration: '6:10', youtubeId: 'VIDEO_ID_5' },
-      { id: 6, title: 'Programación de riego basada en el suelo', duration: '5:30', youtubeId: 'VIDEO_ID_6' },
+     
     ],
   },
   {
@@ -97,8 +90,7 @@ const tutorialData: TutorialData[] = [
     icon: Cloud,
     description: 'Utiliza datos climáticos para tomar decisiones informadas.',
     videos: [
-      { id: 7, title: 'Interpretación de pronósticos', duration: '6:45', youtubeId: 'VIDEO_ID_7' },
-      { id: 8, title: 'Ajuste de riego según condiciones climáticas', duration: '5:15', youtubeId: 'VIDEO_ID_8' },
+     
     ],
   },
   {
@@ -108,10 +100,10 @@ const tutorialData: TutorialData[] = [
     fontcolor: 'text-white',
     iconRoute: iconplanta.src,
     icon: Cloud,
-    description: 'Utiliza datos climáticos para tomar decisiones informadas.',
+    description: 'Optimiza tu riego con informacion directa de tus plantas',
     videos: [
-      { id: 7, title: 'Interpretación de pronósticos', duration: '6:45', youtubeId: 'VIDEO_ID_7' },
-      { id: 8, title: 'Ajuste de riego según condiciones climáticas', duration: '5:15', youtubeId: 'VIDEO_ID_8' },
+      { id: 11, youtubeId: 'K_meOXI2uu4', title: 'Aspectos generales Modulo Planta' },
+      { id: 12, youtubeId: 'K_meOXI2uu4', title: 'Aspectos generales Modulo Planta' },
     ],
   },
   {
@@ -123,8 +115,8 @@ const tutorialData: TutorialData[] = [
     icon: Cloud,
     description: 'Utiliza datos climáticos para tomar decisiones informadas.',
     videos: [
-      { id: 7, title: 'Interpretación de pronósticos', duration: '6:45', youtubeId: 'VIDEO_ID_7' },
-      { id: 8, title: 'Ajuste de riego según condiciones climáticas', duration: '5:15', youtubeId: 'VIDEO_ID_8' },
+      { id: 13, youtubeId: 'K_meOXI2uu4', title: 'Aspectos generales Modulo Planta' },
+      
     ],
   },
   {
@@ -136,8 +128,7 @@ const tutorialData: TutorialData[] = [
     icon: Cloud,
     description: 'Utiliza datos climáticos para tomar decisiones informadas.',
     videos: [
-      { id: 7, title: 'Interpretación de pronósticos', duration: '6:45', youtubeId: 'VIDEO_ID_7' },
-      { id: 8, title: 'Ajuste de riego según condiciones climáticas', duration: '5:15', youtubeId: 'VIDEO_ID_8' },
+      
     ],
   },
 ]
@@ -185,80 +176,69 @@ export default function TutorialPage() {
         </svg>
       </div>
 
-      <main className="container mx-auto px-4 py-8 relative z-30 -mt-64">
-      <Card 
-  className="relative mb-8 w-full h-[500px] bg-white shadow-lg flex flex-col justify-end items-start overflow-hidden" 
-  style={{ backgroundImage: `url('${vineyard.src}')` }}
->
-  {/* Superposición con degradado */}
-  <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-1"></div>
+      <main className="w-screen relative z-30 -mt-64">
+        <div 
+          className="relative rounded mb-8 w-full h-[300px] bg-white shadow-lg flex flex-col justify-end items-start overflow-hidden px-4 md:px-0 container mx-auto" 
+          style={{ backgroundImage: `url('${vineyard.src}')`, backgroundSize: 'cover', backgroundPosition: 'center', width: '100vw' }}
+        >
+          {/* Superposición con degradado */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-1"></div>
 
-  {/* Contenido de la tarjeta */}
-  <CardContent className="relative z-10 p-6">
-    <h2 className="text-5xl font-semibold mb-4 text-white">Bienvenido a los Tutoriales de Olive+</h2>
-    <p className="text-white">Explora nuestros módulos de aprendizaje para sacar el máximo provecho de Olive+ en la gestión de tu sistema de riego.</p>
-  </CardContent>
-</Card>
+          {/* Contenido de la tarjeta */}
+          <CardContent className="relative z-10 p-6">
+            <h2 className="text-5xl font-semibold mb-4 text-white">Bienvenido a los Tutoriales de Olive+</h2>
+            <p className="text-white">Explora nuestros módulos de aprendizaje para sacar el máximo provecho de Olive+ en la gestión de tu sistema de riego.</p>
+          </CardContent>
+        </div>
 
-        <ScrollArea className="h-[calc(100vh-300px)]">
-          {tutorialData.map((module: TutorialData) => (
-            <Card key={module.id} className={`mb-4 ${module.color} ${module.fontcolor} w-full shadow-md`}>
-              <CardHeader className="cursor-pointer" onClick={() => toggleModule(module.id)}>
-                <CardTitle className="flex justify-between items-center">
-                  <div className="flex items-center">
-                    <img
-                      src={module.iconRoute}
-                      alt="icon"
-                      className="h-16 w-16 mr-2"
-                      width={200} height={200} />
-                    <span className="text-xl">{module.name}</span>
-                  </div>
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                  >
-                    {expandedModule === module.id ? (
-                      <ChevronUp className="h-6 w-6" />
-                    ) : (
-                      <ChevronDown className="h-6 w-6" />
-                    )}
-                  </Button>
-                </CardTitle>
-              </CardHeader>
+        <div id='tutorials' className='px-4 md:px-0 container mx-auto'>
+          {tutorialData.filter(module => module.videos.length > 0).map((module: TutorialData) => (
+            <div key={module.id} className="mb-4 w-full">
+              <div className="cursor-pointer flex justify-between items-center" onClick={() => toggleModule(module.id)}>
+                <div className="flex items-center">
+                  <img
+                    src={module.iconRoute}
+                    alt="icon"
+                    className="h-16 w-16 mr-2"
+                    width={200} height={200} />
+                  <span className={`text-xl text-${module.color}`}>{module.name}</span>
+                </div>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="text-blk"
+                >
+                  {expandedModule === module.id ? (
+                    <ChevronUp className="h-6 w-6" />
+                  ) : (
+                    <ChevronDown className="h-6 w-6" />
+                  )}
+                </Button>
+              </div>
+              <hr className="border-blk my-2" />
               {expandedModule === module.id && (
-                <CardContent>
-                  <p className={`text-sm ${module.fontcolor} mb-4`}>{module.description}</p>
-                  {module.videos.map((video) => (
-                    <div key={video.id} className="mb-4">
-                      <Button
-                        variant="ghost"
-                        className="w-full justify-start mb-2 hover:bg-white/50"
-                        onClick={() => toggleVideo(video)}
-                      >
-                        <Play className="h-4 w-4 mr-2" />
-                        <span className="flex-grow text-left">{video.title}</span>
-                        <span className={`text-sm ${video.fontcolor}`}>{video.duration}</span>
-                      </Button>
-                      {selectedVideo && selectedVideo.id === video.id && (
-                        <div className="mt-2">
-                          <div className="aspect-w-16 aspect-h-9" style={{ height: '400px' }}>
-                            <iframe
-                              src={`https://www.youtube.com/embed/${video.youtubeId}`}
-                              frameBorder="0"
-                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                              allowFullScreen
-                              className="w-full h-full"
-                            ></iframe>
-                          </div>
-                        </div>
-                      )}
-                    </div>
-                  ))}
-                </CardContent>
+                <div className="bg-transparent pb-10">
+                  <p className="text-sm text-blk mb-4">{module.description}</p>
+                  <hr className="border-blk mb-4" />
+                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                    {module.videos.map((video) => (
+                      <div key={video.id} className="aspect-w-16 aspect-h-9" style={{ height: '200px' }}>
+                        <iframe
+                          src={`https://www.youtube.com/embed/${video.youtubeId}`}
+                          frameBorder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowFullScreen
+                          className="w-full h-full"
+                        ></iframe>
+                        <p className="text-justify text-blk font-bold mt-2">{video.title}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               )}
-            </Card>
+            </div>
           ))}
-        </ScrollArea>
+        </div>
       </main>
     </div>
   )
