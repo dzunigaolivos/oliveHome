@@ -1,6 +1,6 @@
 "use client";
 import { useState } from 'react'
-import { ChevronDown, ChevronUp, Play, Settings, Droplet, Sprout, Cloud } from 'lucide-react'
+import { ChevronDown, ChevronUp, Settings, Droplet, Sprout, Cloud } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { CardContent } from "@/components/ui/card"
 import Image from 'next/image'
@@ -134,16 +134,12 @@ const tutorialData: TutorialData[] = [
 
 export default function TutorialPage() {
   const [expandedModule, setExpandedModule] = useState<number | null>(null)
-  const [selectedVideo, setSelectedVideo] = useState<VideoData | null>(null)
-
+  
   const toggleModule = (moduleId: number) => {
     setExpandedModule(expandedModule === moduleId ? null : moduleId)
-    setSelectedVideo(null)
+
   }
 
-  const toggleVideo = (video: VideoData) => {
-    setSelectedVideo(selectedVideo && selectedVideo.id === video.id ? null : video)
-  }
 
   return (
     <div className="min-h-screen bg-[#f8f9fa] " >
