@@ -28,7 +28,6 @@ import backClima from './public/images/backClima.jpg';
 import backPozo from './public/images/backPozo.jpg';
 import backSuelo from './public/images/backSuelo.jpg';
 import backAnalisis from './public/images/backAnalisis.png';
-import backMob from './public/images/olivebackmob.jpg';
 import whatsapp from './public/images/whaza.webp';
 import NosotrosSection from '@/components/nosotros_section'
 import { motion } from 'framer-motion';
@@ -160,7 +159,7 @@ export default function Home() {
           {/* Contenido (texto) */}
           <div className='sm:invisible md:invisible lg:visible xl:visible 2xl:visible'>
             <div className="absolute z-10 flex items-center justify-start h-full w-full">
-              <div className="invisible invisible lg:visible xl:visible 2xl:visible px-4 sm:px-8 md:px-12 lg:px-16 w-full md:w-3/4 relative">
+              <div className="invisible lg:visible xl:visible 2xl:visible px-4 sm:px-8 md:px-12 lg:px-16 w-full md:w-3/4 relative">
                 <h1 className="text-whit text-3xl sm:text-2xl md:text-4xl lg:text-5xl 2xl:text-8xl font-bold">La manera más fácil de </h1>
                 <h1 className="text-whit text-3xl sm:text-2xl md:text-4xl lg:text-5xl 2xl:text-8xl font-bold">gestionar tu riego,</h1>
                 <h1 className="text-whit text-3xl sm:text-2xl md:text-4xl lg:text-5xl 2xl:text-8xl font-bold">ahora a tu alcance</h1>
