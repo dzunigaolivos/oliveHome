@@ -2,8 +2,7 @@
 import { useState } from 'react'
 import { ChevronDown, ChevronUp, Play, Settings, Droplet, Sprout, Cloud } from 'lucide-react'
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { ScrollArea } from "@/components/ui/scroll-area"
+import { CardContent } from "@/components/ui/card"
 import Image from 'next/image'
 import logo from '../../public/images/logo.png';
 import iconfuente from '../../public/images/iconfuente.png';
