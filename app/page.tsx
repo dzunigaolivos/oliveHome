@@ -81,6 +81,7 @@ export default function Home() {
           <div className="flex justify-between items-center py-4">
             <Image
               src={logo.src}
+              priority
               alt="Olive+"
               width={130}
               height={80} />
@@ -177,8 +178,8 @@ export default function Home() {
                   {/*<Image
                     src={backMob.src}
                     alt="Monitoreo de Cultivo"
-                    layout="fill"
-                    objectFit="cover"
+                    fill
+                     style={{objectFit:"cover"}}
                     className="rounded-lg"
                   />*/}
                   <div className="absolute inset-0 w-full h-full bg-gradient-to-b from-transparent to-black opacity-80"></div>
@@ -235,8 +236,8 @@ export default function Home() {
           <Image
             src={fondocentro.src}
             alt="Monitoreo de Cultivo"
-            layout="fill"
-            objectFit="cover"
+            fill
+            style={{objectFit:"cover"}}
             className="rounded-lg"
           />
         </div>
@@ -323,8 +324,8 @@ export default function Home() {
           <Image
             src={fondotuto.src}
             alt="Monitoreo de Cultivo"
-            layout="fill"
-            objectFit="cover"
+            fill
+            style={{objectFit:"cover"}}
             className="rounded-lg"
           />
         </div>

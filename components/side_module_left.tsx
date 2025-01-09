@@ -26,7 +26,7 @@ const SideModuleLeft: React.FC<SideModuleLeftProps> = ({ title, description, mod
     >
       <div className="w-full p-4 flex flex-col md:flex-row items-start relative">
         <div className="absolute inset-0 z-0 w-full h-full">
-          <Image src={backgroundImageSrc} alt="Background" layout="fill" objectFit="cover" />
+          <Image src={backgroundImageSrc} alt="Background" fill  style={{objectFit:"cover"}} />
           <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-95"></div>
         </div>
         <div className="relative z-10 w-full flex flex-col md:flex-row justify-start items-center">
@@ -43,7 +43,7 @@ const SideModuleLeft: React.FC<SideModuleLeftProps> = ({ title, description, mod
         </div>
       </div>
       <div className="w-full h-auto relative">
-        <Image src={backgroundImageSrc} alt="Background" layout="fill" objectFit="cover" className="rounded-lg" />
+        <Image src={backgroundImageSrc} alt="Background" fill  style={{objectFit:"cover"}} className="rounded-lg" />
       </div>
     </motion.div>
   );

@@ -65,6 +65,8 @@ const tutorialData: TutorialData[] = [
     icon: Cloud,
     description: 'Utiliza datos climáticos para tomar decisiones informadas.',
     videos: [
+      { id: 14, youtubeId: 'zH_TEOkSQNM', title: 'Módulo Riego - Aspectos generales' },
+      { id: 15, youtubeId: 'Z9bfEC84ilA', title: 'Módulo Riego - Alertas de controlador' },
      
     ],
   },
@@ -77,7 +79,7 @@ const tutorialData: TutorialData[] = [
     iconRoute: iconsuelo.src,
     description: 'Optimiza el manejo del suelo para un mejor rendimiento de cultivos.',
     videos: [
-     
+      { id: 16, youtubeId: 'eujhTdCrAKs', title: 'Aspectos básicos de la humedad de suelo' },
     ],
   },
   {
@@ -101,8 +103,8 @@ const tutorialData: TutorialData[] = [
     icon: Cloud,
     description: 'Optimiza tu riego con informacion directa de tus plantas',
     videos: [
-      { id: 11, youtubeId: 'K_meOXI2uu4', title: 'Aspectos generales Modulo Planta' },
-      { id: 12, youtubeId: 'K_meOXI2uu4', title: 'Aspectos generales Modulo Planta' },
+      { id: 11, youtubeId: 'K_meOXI2uu4', title: 'Módulo Planta - Aspectos generales' },
+      { id: 12, youtubeId: 'jgBQf6r7NsM', title: 'Módulo Planta - Registros manuales' },
     ],
   },
   {
@@ -114,7 +116,6 @@ const tutorialData: TutorialData[] = [
     icon: Cloud,
     description: 'Utiliza datos climáticos para tomar decisiones informadas.',
     videos: [
-      { id: 13, youtubeId: 'K_meOXI2uu4', title: 'Aspectos generales Modulo Planta' },
       
     ],
   },

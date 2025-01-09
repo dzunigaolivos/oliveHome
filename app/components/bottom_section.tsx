@@ -10,8 +10,8 @@ const BottomSection = () => {
         <Image
           src={fondoBottom.src}
           alt="Fondo"
-          layout="fill"
-          objectFit="cover"
+          fill
+          style={{objectFit:"cover"}}
           className="rounded-lg"
         />
       </div>
